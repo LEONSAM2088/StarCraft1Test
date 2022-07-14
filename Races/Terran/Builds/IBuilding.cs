@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StarCraft1.Races.Terran.Builds
+namespace SC1GameObj
 {
     public interface IBuilding
     {
