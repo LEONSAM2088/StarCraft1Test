@@ -35,7 +35,7 @@ namespace SC1GameObj
         public override void Move(float x, float y)
         {
             if (IsFlying)
-                Location.ChangeLocationBy(x, y);
+                Location!.ChangeLocationBy(x, y);
         }
 
 
