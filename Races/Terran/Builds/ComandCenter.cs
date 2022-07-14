@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StarCraft1.Races.Terran.Builds
+namespace SC1GameObj
 {
     public class ComandCenter : Building
     {
@@ -16,10 +16,12 @@ namespace StarCraft1.Races.Terran.Builds
         public int[] StorageCSV = new int[5];
        
 
-        public ComandCenter(EPlayerColor color, Location location): base(maxHp, location, color)
-        {            
-            spawnCSVLocation = location;
-            spawnCSVLocation.ChangeLocationBy(-5.0f, -5.0f);
+        public ComandCenter(): base()
+        {
+
+            spawnCSVLocation = Location!;
+
+            SetHp(maxHp);
         }
         
 
@@ -33,7 +35,7 @@ namespace StarCraft1.Races.Terran.Builds
         public override void Move(float x, float y)
         {
             if (IsFlying)
-                Location.ChangeLocationBy(x, y);
+                Location!.ChangeLocationBy(x, y);
         }
 
 

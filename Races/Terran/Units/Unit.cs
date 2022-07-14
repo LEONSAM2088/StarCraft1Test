@@ -4,25 +4,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StarCraft1.Races.Terran.Units
+namespace SC1GameObj
 {
     public class Unit : GameObject, IUnit
     {
-        readonly int Damage;
+        public int Damage { get; private set; }
 
-        public Unit(int maxHp, Location position, int damage, EPlayerColor color): base(maxHp, position, color)
+        
+        public Unit() : base()
         {
-           Damage = damage;
+            
         }
-
         public void Attack(GameObject obj)
         {
-            obj.Damaged(Damage);
+            
+                obj.Damaged(Damage);
+        }
+        public void SetDamage(int dmg)
+        {
+            Damage = dmg;
         }
 
         public override void Move(float x, float y)
         {
-            Location.ChangeLocationBy(x, y);
+            Location!.ChangeLocationBy(x, y);
         }
     }
 }

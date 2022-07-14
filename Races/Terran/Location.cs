@@ -1,4 +1,4 @@
-﻿namespace StarCraft1.Races.Terran
+﻿namespace SC1GameObj
 {
     public class Location
     {

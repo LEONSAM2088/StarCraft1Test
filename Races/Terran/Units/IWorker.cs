@@ -1,11 +1,10 @@
-﻿using StarCraft1.Races.Terran.Builds;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StarCraft1.Races.Terran.Units
+namespace SC1GameObj
 {
     public interface IWorker
     {

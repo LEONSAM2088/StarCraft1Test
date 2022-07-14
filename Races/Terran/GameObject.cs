@@ -5,28 +5,37 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StarCraft1.Races.Terran
+namespace SC1GameObj
 {
-    public abstract class GameObject: IEnumerable<GameObject>
+    public enum EPlayerColor
     {
-        public const float visionDistance = 800;
+        RED,
+        GREEN,
+        BLUE
+    }
 
-        public readonly EPlayerColor Color;
+    public abstract class GameObject
+    {
+        
+        public static int Id { get;private set; }
+        public int MyId { get; private set; }
 
-        public Location Location { get; private set; }
+        
+
+        //public const float visionDistance = 800;
+
+        public EPlayerColor Color { get; private set; }
+
+        public Location? Location { get; private set; }
 
         public int Hp { get; private set; }
 
-        public GameObject(int maxHp, Location location, EPlayerColor color)
-        {
-            Hp = maxHp;
-            Location = location;
-            Color = color;
-        }
+        public GameObject() => MyId = Id++;
 
+        
         public void Damaged(int damage)
         {
-            if (damage >= Hp)
+          if (damage >= Hp)
                 Hp = 0;
             else
                 Hp -= damage;
@@ -34,17 +43,19 @@ namespace StarCraft1.Races.Terran
 
         public virtual void Move(float x, float y)
         {
-                
+            if (Location != null)
+                Location.ChangeLocationBy(x, y);
+            else
+                throw new Exception("Location is null!");
         }
 
-        public IEnumerator<GameObject> GetEnumerator()
-        {
-            throw new NotImplementedException();
-        }
+        public void SetLocation(Location location) => Location = location;
+       
+        public void SetHp(int hp) => Hp = hp;
+        
+        public void SetColor(EPlayerColor color) => Color = color;
+        
 
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StarCraft1.Races.Terran.Builds
+namespace SC1GameObj
 {
     public enum BuildingStatus
     {
@@ -23,7 +23,7 @@ namespace StarCraft1.Races.Terran.Builds
         
 
         
-        public Building(int maxHp, Location location, EPlayerColor color) : base(maxHp, location, color)
+        public Building() : base()
         {
            
         }
