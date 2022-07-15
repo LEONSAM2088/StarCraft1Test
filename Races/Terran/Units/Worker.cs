@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace SC1GameObj
 {
+    
     public class Worker : Unit, IWorker
     {
 
-        public const int MaxHp = 250;
-        const int WorkerDamage = 5;
+        
       
         public Worker() : base()
         {
-            SetDamage(WorkerDamage);
-            SetHp(MaxHp);
+            SetDamage(Consts.WorkerDamage);
+            SetHp(Consts.WorkerMaxHp);
         }
 
 

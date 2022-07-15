@@ -13,7 +13,7 @@ namespace SC1GameObj
         GREEN,
         BLUE
     }
-
+    
     public abstract class GameObject
     {
         
@@ -28,12 +28,12 @@ namespace SC1GameObj
 
         public Location Location { get; private set; } = null!;
 
-        public int Hp { get; private set; }
+        public ushort Hp { get; private set; }
 
         public GameObject() => MyId = Id++;
 
         
-        public void Damaged(int damage)
+        public void Damaged(ushort damage)
         {
           if (damage >= Hp)
                 Hp = 0;
@@ -51,7 +51,7 @@ namespace SC1GameObj
 
         public void SetLocation(Location location) => Location = location;
        
-        public void SetHp(int hp) => Hp = hp;
+        public void SetHp(ushort hp) => Hp = hp;
         
         public void SetColor(EPlayerColor color) => Color = color;
         

@@ -6,14 +6,15 @@ using System.Threading.Tasks;
 
 namespace SC1GameObj
 {
+    
     public class ComandCenter : Building
     {
-        const int maxHp = 5000;
+        const ushort maxHp = 5000;
        
         public Location spawnCSVLocation;
         public bool IsFlying { get; private set; }
-        public int[] OrderList = new int[6];
-        public int[] StorageCSV = new int[5];
+        //public int[] OrderList = new int[6];
+        //public int[] StorageCSV = new int[5];
        
 
         public ComandCenter(): base()

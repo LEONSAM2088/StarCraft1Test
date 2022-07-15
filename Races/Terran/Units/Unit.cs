@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace SC1GameObj
 {
+    
     public class Unit : GameObject, IUnit
     {
-        public int Damage { get; private set; }
+        public string Name { get; set; }
+        public ushort Damage { get; private set; }
 
         
         public Unit() : base()
@@ -20,7 +22,7 @@ namespace SC1GameObj
             
                 obj.Damaged(Damage);
         }
-        public void SetDamage(int dmg)
+        public void SetDamage(ushort dmg)
         {
             Damage = dmg;
         }

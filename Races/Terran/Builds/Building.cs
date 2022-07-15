@@ -16,7 +16,7 @@ namespace SC1GameObj
     {
         CommandCenter
     }
-
+    
     public class Building : GameObject, IBuilding
     {
         

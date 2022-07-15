@@ -16,6 +16,6 @@ namespace SC1GameObj
 
         public int GetHP();
 
-        public void Damaged(int damage);
+        public void Damaged(ushort damage);
     }
 }

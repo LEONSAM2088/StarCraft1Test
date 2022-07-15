@@ -1,5 +1,6 @@
 ﻿namespace SC1GameObj
 {
+    
     public class Location
     {
         public float X { get; set; }
